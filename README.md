@@ -4,7 +4,7 @@ As reinforcement learning materials conducted from January, I mainly studied thr
 
 By reading related papers, we are laying the foundation for reinforcement learning, and we intend to apply it to hardware implementation.
 
-1. Before we do it...
+# 1. Before we do it...
 
 Install the Anaconda Library. (Installization : https://www.anaconda.com/products/individual)
 
@@ -14,7 +14,7 @@ When the anaconda installation is complete, turn on the anaconda prompt and ente
 
 Caution: Command recognition is possible only when 'conda' is added to the front.
 
-2. Configuring the Anaconda Basic Environment
+# 2. Configuring the Anaconda Basic Environment
 
 If you enter 'conda env list', you can see that only the base exists.
 
@@ -26,7 +26,7 @@ If you enter 'conda env list' again in base, you can check the name of the produ
 
 Finally, you can enter the virtual environment directory created in the base directory by entering 'condactivate'.
 
-3. Download libraries and packages required for learning
+# 3. Download libraries and packages required for learning
 
 If you've just finished creating and entering a virtual environment, you should now download what you need to learn.
 
@@ -40,7 +40,7 @@ Since the required library is different depending on the learning purpose, the l
 
 Caution: It depends on your computer environment (or GPU), so you need to see and install the version carefully.
 
-4. Install PyCharm IDE
+# 4. Install PyCharm IDE
 
 IDE is an integrated development environment, meaning can be found at https://en.wikipedia.org/wiki/Integrated_development_environment).
 
@@ -52,7 +52,7 @@ Download it from https://www.jetbrains.com/ko-kr/pycharm/download/#section=windo
 
 It can also be installed as default like anaconda.
 
-5. PyCharm Interpreter setting
+# 5. PyCharm Interpreter setting
 
 Once the installation is complete, you can select a page where you can proceed with the new project.
 
@@ -64,4 +64,4 @@ Occasionally, the interpreter changes while proceeding, and the library is not r
 
 At the end of this stage, it can be said that preparations for basic use are completed.
 
-# This file translated by Papago (https://papago.naver.com/)
+*This file translated by Papago (https://papago.naver.com/)*
