@@ -1,4 +1,4 @@
-Proceed reinforcement Learning files (Jan. 2023)
+# Deep-Reinforcement-Learning-Jan.2023
 
 As reinforcement learning materials conducted from January, I mainly studied through Reinforcement Learning with Python and Keras, author Lee Woong-won, and Wikibooks.
 
