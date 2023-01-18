@@ -1,61 +1,67 @@
 Proceed reinforcement Learning files (Jan. 2023)
 
-Since Jan, i'm studying with a book 
-1월부터 진행한 강화 학습 공부 자료로 '파이썬과 케라스로 배우는 강화학습, 이웅원 저, 위키북스'를 통해 주로 공부하였다.
+As reinforcement learning materials conducted from January, I mainly studied through Reinforcement Learning with Python and Keras, author Lee Woong-won, and Wikibooks.
 
-관련 논문을 읽으며 강화 학습의 기초를 다지고 있으며, 이를 하드웨어 구현에 적용하려고 한다.
+By reading related papers, we are laying the foundation for reinforcement learning, and we intend to apply it to hardware implementation.
 
-1. 하기에 앞서..
-아나콘다 라이브러리를 설치한다. (설치 : https://www.anaconda.com/products/individual)
+1. Before we do it...
 
-설치는 default로 진행하면 된다.
+Install the Anaconda Library. (Installization : https://www.anaconda.com/products/individual)
 
-아나콘다 설치가 완료되면 anaconda prompt를 켜서 'conda env list'를 입력한다. (env = environment)
+Installation can be done by default.
 
-주의 : 맨 앞에 'conda'를 붙혀야 명령어 인식 가능
+When the anaconda installation is complete, turn on the anaconda prompt and enter 'conda env list'. (env = environment)
 
-2. 아나콘다 기본 환경 설정
-'conda env list'를 입력하면 base만 존재하는 것을 확인할 수 있다.
+Caution: Command recognition is possible only when 'conda' is added to the front.
 
-새로운 가상 환경에서 진행할 수 있도록 (그것이 아나콘다의 목적임) 'conda create -n [가상환경 이름] python=3.7'를 입력한다.
+2. Configuring the Anaconda Basic Environment
 
-그러면 가상환경 이름의 새로운 환경이 python 3.7 version으로 생성된다.
+If you enter 'conda env list', you can see that only the base exists.
 
-base에서 다시 'conda env list'를 입력하면 방금 생성산 가상환경 이름을 확인할 수 있다.
+Enter 'conda create -n [virtual environment name] python=3.7' to proceed in a new virtual environment (that is the purpose of Anaconda).
 
-마지막으로, 'conda activate [가상환경 이름]'을 입력하면 base 디렉토리에서 생성한 가상환경 디렉토리로 들어갈 수 있다.
+A new environment with the virtual environment name is then created in python 3.7 version.
 
-3. 학습에 필요한 라이브러리 및 패키지 다운로드
-방금까지 가상환경을 만들고 들어가는 것이 완료된다면, 이제 학습에 필요한 것들을 다운로드 해야한다.
+If you enter 'conda env list' again in base, you can check the name of the productive virtual environment just now.
 
-다운로드는 다음 검색창에 입력해 필요한 것을 다운받으면 된다. (다운 : https://anaconda.org/)
+Finally, you can enter the virtual environment directory created in the base directory by entering 'condactivate'.
 
-ex) tensorflow를 다운받기 위해 명령 프롬프트에 'conda install -c conda-forge tensorflow'를 입력하면 설치가 된다.
+3. Download libraries and packages required for learning
 
-설치 중간에 'y/n'을 물을 때는 y 혹은 enter를 입력하면 된다.
+If you've just finished creating and entering a virtual environment, you should now download what you need to learn.
 
-학습에 따라 필요 라이브러리는 다르기 때문에, 학습 목적에 따라 라이브러리를 선택해 다운로드한다.
+You can download it by typing it in the next search box. (Download : https://anaconda.org/)
 
-주의 : 컴퓨터 환경에 따라 (혹은 GPU에 따라) 다르므로 version을 잘 보고 설치해야 함
+ex) To download the tensorflow, enter 'conda install -conda-forge tensorflow' at the command prompt to install.
 
-4. PyCharm IDE 설치
-IDE는 통합 개발 환경이며, (https://en.wikipedia.org/wiki/Integrated_development_environment)를 통해 의미를 확인할 수 있다.
+Enter y or enter when asking 'y/n' during installation.
 
-공부를 하면서 최대한 영어 자료를 보는 것이 중요하며, 한 번 잘 읽어놓으면 개발에 도움이 많이 됨
+Since the required library is different depending on the learning purpose, the library is selected and downloaded according to the learning purpose.
 
-그 중에서 PyCharm은 많이 사용하는 환경 중 하나이다. (사실 Visual Studio Code를 더 많이 사용하는 것 같기도 한데, 상관은 없다.)
+Caution: It depends on your computer environment (or GPU), so you need to see and install the version carefully.
 
-다운로드는 https://www.jetbrains.com/ko-kr/pycharm/download/#section=windows 에서 진행하면 된다.
+4. Install PyCharm IDE
 
-이 또한 아나콘다와 같이 default로 설치하면 된다.
+IDE is an integrated development environment, meaning can be found at https://en.wikipedia.org/wiki/Integrated_development_environment).
 
-5. PyCharm Interpreter 설정
-설치가 완료되면 새롭게 프로젝트를 진행할 수 있는 페이지를 선택할 수 있다.
+It is important to look at English materials as much as possible while studying, and once you read them carefully, it will be very helpful for development.
 
-선택하는 단계에서 파이썬 인터프리터를 선택하게 되는데, 이 때 방금 설치했던 아나콘다를 통해 진행할 수 있으므로,
+Among them, PyCharm is one of the most used environments. (Actually, I think I use Visual Studio Code more, but it doesn't matter.)
 
-User의 envs 파일 내 만들어 놓은 가상환경 이름 파일을 선택하고 그 곳의 'python.exe'를 선택한다.
+Download it from https://www.jetbrains.com/ko-kr/pycharm/download/#section=windows.
 
-가끔 진행하다가 인터프리터가 변경되어 라이브러리 인식이 안되서 코드가 동작하지 않기에 설정을 통해 확인해야 함
+It can also be installed as default like anaconda.
 
-이 단계가 끝나면 기초적인 사용을 위한 준비가 끝났다고 할 수 있다.
+5. PyCharm Interpreter setting
+
+Once the installation is complete, you can select a page where you can proceed with the new project.
+
+At the selection stage, you will select Python interpreters, which can be done through the anaconda you just installed.
+
+Select the virtual environment name file that you created in the user's envs file and select 'python.exe' there.
+
+Occasionally, the interpreter changes while proceeding, and the library is not recognized, so the code does not work, so you need to check it through settings.
+
+At the end of this stage, it can be said that preparations for basic use are completed.
+
+# This file translated by Papago (https://papago.naver.com/)
