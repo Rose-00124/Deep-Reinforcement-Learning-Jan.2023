@@ -5,7 +5,7 @@ As reinforcement learning materials conducted from January, I mainly studied thr
 
 By reading related papers, we are laying the foundation for reinforcement learning, and we intend to apply it to hardware implementation.
 
-# 1. Before we do it...
+# 1. Before we start it...
 
 Install the Anaconda Library. (Installization : https://www.anaconda.com/products/individual)
 
