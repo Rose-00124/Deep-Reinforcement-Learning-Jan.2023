@@ -65,4 +65,4 @@ Occasionally, the interpreter changes while proceeding, and the library is not r
 
 At the end of this stage, it can be said that preparations for basic use are completed.
 
-*This file translated by Papago (https://papago.naver.com/)*
+*This file was translated by Papago (https://papago.naver.com/)*
