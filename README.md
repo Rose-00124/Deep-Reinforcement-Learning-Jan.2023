@@ -1,6 +1,7 @@
 # Deep-Reinforcement-Learning-Jan.2023
 
 As reinforcement learning materials conducted from January, I mainly studied through Reinforcement Learning with Python and Keras, author Lee Woong-won, and Wikibooks.
+(Book information : http://www.yes24.com/Product/Goods/44136413)
 
 By reading related papers, we are laying the foundation for reinforcement learning, and we intend to apply it to hardware implementation.
 
