@@ -79,5 +79,15 @@ Q[state.action] = reward + dis * np.max(Q[new_state, :])
 Q[state,action] = (1 - learning_rate) * Q[state,action] + learning_rate * (reward + dis * np.max(Q[new_state, :]))
 
 # Lecture 6 : Q-Network (with Deep Q-Learning algorithm)
+# Q-Network for Frozen Lake
 
-                                        
+# Input and output size based in the env
+input_size = env.observation_space.n # 16 <-- output
+output_size = env.action_space.n # 4 <-- output
+
+# These lines establish the feed-forward part of the network used to choose actions
+X = tf.placeholder(shape=[1,input_size], dtype=tf.float32) # start input
+W = tf.Variable(tf.random_uniform([input_size, output_size], 0, 0.01)) # weight
+Qpred = tf.matmul(X,W) # Out Q prediction
+
+
