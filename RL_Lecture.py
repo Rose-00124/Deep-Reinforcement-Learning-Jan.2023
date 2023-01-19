@@ -22,7 +22,7 @@ for _ in range(1000):
 # 1) Find Max Value 2) Something Value (Maybe, Max Value) <-- argmax(a')Q(s1, a)
 
 # Initialize table with all zeros
-Q = np.zeros([env.observation_space.n, env.action_space.n]) # <=- Create table
+Q = np.zeros([env.observation_space.n, env.action_space.n]) # <-- Create table
 
 # Set learning parameters
 num_episodes = 2000 # count
@@ -46,3 +46,38 @@ for i in range (num_episodes):
     Q[state,action] = reward + np.max(Q[new_state, :])
     
     state = new_state
+
+# Lecture 4 : Q-learning (table), exploit & exploration and discounted reward
+# Using e-greedy
+for i in range (num_episodes):
+  e = 1./((i/100) + 1) 
+  
+# The Q-Table learning algorithm
+while not done:
+  # Choose an action by e-greedy
+  if np.random.rand(1) < e:
+    action = env.action_space.sample()
+  
+  else:
+    action = np.argmax(Q[state,:])
+    
+# Exploit vs. Exploration : add random noise
+for i in range (1000):
+  a = argmax(Q(s,a) + random_values / (i + 1))
+  
+# Choose an action by greedy (with noise) picking from Q table
+action = np.argmax(Q[state,:] + np.random.randn(1, env.action_space.n) / (i + 1))
+
+# Discount factor
+dis = .99
+
+# Update Q-Table with new knowledgement using decay rate
+Q[state.action] = reward + dis * np.max(Q[new_state, :])
+
+# Lecture 5 : Q-learning on Nondeterministic worlds!
+# Update Q-Table with new knowledgement using learning rate
+Q[state,action] = (1 - learning_rate) * Q[state,action] + learning_rate * (reward + dis * np.max(Q[new_state, :]))
+
+# Lecture 6 : Q-Network (with Deep Q-Learning algorithm)
+
+                                        
