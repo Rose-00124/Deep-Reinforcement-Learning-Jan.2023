@@ -10,7 +10,7 @@ import gym
 env = gym.make("Taxi-v1") 
 
 # Initialization (Caution)
-observation  = env.reset()
+observation = env.reset()
 
 for _ in range(1000):
   env.render() # Output
@@ -89,5 +89,35 @@ output_size = env.action_space.n # 4 <-- output
 X = tf.placeholder(shape=[1,input_size], dtype=tf.float32) # start input
 W = tf.Variable(tf.random_uniform([input_size, output_size], 0, 0.01)) # weight
 Qpred = tf.matmul(X,W) # Out Q prediction
+Y = tf.placeholder(shape = [1, output_size], dtype = tf.float32) # Y label
 
+loss = tf.reduce_sum(tf.square(Y-Qpred))
+train = tf.train.GradientDescentOptimizer(learning_rate = learning_rate).minimize(loss)
+Qs[0,a] = reward + dis * np.max(Qs1)
+
+# Train our network using target (Y) and predicted Q (Qpred) values
+sess.run(train, feed_dict = {X : one_hot(s), Y : Qs})
+
+# Choose an action by greedily (with e chance of random action) from the Q-network
+Qs = sess.run(Qpred, feed_dict = {X : one_hot(s)}) # table --> network
+if np.random.rand(1) < e :
+  a = env.action_space.sample()
+  
+else :
+  a = np.argmax(Qs)
+  
+if done :
+  # Update Q, and no Qs+1, since it/s a terminal state
+  Qs[0,a] = reward
+ 
+else :
+  # Obtain the Q_s1 values by feeding the new state through our network
+  Qs1 = sess.run(Qpred, feed_dict = {X : one_hot(s1)})
+  # Update Q
+  Qs[0,a] = reward + dis * np.max(Qs1)
+  
+# Q-Network for Cart Pole
+import gym
+env = 
+  
 
